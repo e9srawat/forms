@@ -1,65 +1,105 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+"""
+views.py
+"""
+from django.views.generic import CreateView, TemplateView
 from . import forms
-from django.views.generic import CreateView ,TemplateView
 
 # Create your views here.
 
 
-# def index(request):
-#     if request.method == "POST":
-#         form = BookForm(request.POST)
-#         if form.is_valid():
-#             return HttpResponse("/thanks/")
-#     else:
-#         form = BookForm()
-
-#     return render(request, "add_book.html", {"form": form})
-
 class Success(TemplateView):
+    """
+    success view
+    """
+
     template_name = "success.html"
 
-class Add_book(CreateView):
+
+class AddBook(CreateView):
+    """
+    book view
+    """
+
     template_name = "add.html"
     form_class = forms.BookForm
-    success_url = 'success'
-    
-class Add_Car(CreateView):
+    success_url = "success"
+
+
+class AddCar(CreateView):
+    """
+    car view
+    """
+
     template_name = "add.html"
     form_class = forms.CarForm
-    success_url = 'success'
-    
-class Add_Song(CreateView):
+    success_url = "success"
+
+
+class AddSong(CreateView):
+    """
+    song view
+    """
+
     template_name = "add.html"
     form_class = forms.SongForm
-    success_url = 'success'
-    
-class Add_Movie(CreateView):
+    success_url = "success"
+
+
+class AddMovie(CreateView):
+    """
+    success view
+    """
+
     template_name = "add.html"
     form_class = forms.MovieForm
-    success_url = 'success'
+    success_url = "success"
 
-class Add_Job(CreateView):
+
+class AddJob(CreateView):
+    """
+    job view
+    """
+
     template_name = "add.html"
     form_class = forms.JobPostingForm
-    success_url = 'success'
-    
-class Add_Product(CreateView):
+    success_url = "success"
+
+
+class AddProduct(CreateView):
+    """
+    product view
+    """
+
     template_name = "add.html"
     form_class = forms.ProductForm
-    success_url = 'success'
+    success_url = "success"
 
-class Add_Task(CreateView):
+
+class AddTask(CreateView):
+    """
+    task view
+    """
+
     template_name = "add.html"
     form_class = forms.TaskForm
-    success_url = 'success'
-    
-class Add_Post(CreateView):
+    success_url = "success"
+
+
+class AddPost(CreateView):
+    """
+    post view
+    """
+
     template_name = "add.html"
     form_class = forms.PostForm
-    success_url = 'success'
+    success_url = "success"
 
-class Add_Enrollment(CreateView):
+
+class AddEnrollment(CreateView):
+    """
+    enrollment view
+    """
+
     template_name = "add.html"
     form_class = forms.EnrollmentForm
-    success_url = 'success'
+    success_url = "success"

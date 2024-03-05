@@ -114,8 +114,9 @@ class SongForm(forms.ModelForm):
                     "style": "width: 200px;",
                     "class": "form-control",
                 }
-            )
+            ),
         }
+
 
 class MovieForm(forms.ModelForm):
     """
@@ -151,7 +152,7 @@ class MovieForm(forms.ModelForm):
                     "style": "width: 200px;",
                     "class": "form-control",
                 }
-            )
+            ),
         }
 
 
@@ -190,7 +191,7 @@ class JobPostingForm(forms.ModelForm):
                     "class": "form-control",
                     "maxlength": 100,
                 }
-            )
+            ),
         }
 
 
@@ -221,7 +222,7 @@ class ProductForm(forms.ModelForm):
                     "style": "width: 200px;",
                     "class": "form-control",
                 }
-            )
+            ),
         }
 
 
@@ -252,7 +253,7 @@ class TaskForm(forms.ModelForm):
                     "style": "width: 200px;",
                     "class": "form-control",
                 }
-            )
+            ),
         }
 
 
@@ -283,7 +284,7 @@ class PostForm(forms.ModelForm):
                     "style": "width: 200px;",
                     "class": "form-control",
                 }
-            )
+            ),
         }
 
 
@@ -315,6 +316,5 @@ class EnrollmentForm(forms.ModelForm):
                     "class": "form-control",
                     "maxlength": 2,
                 }
-            )
+            ),
         }
-        
