@@ -95,6 +95,16 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    
+class PostCategory(models.Model):
+    """
+    category model
+    """
+
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):
@@ -136,7 +146,7 @@ class Post(models.Model):
 
     title = models.CharField(max_length=100)
     content = models.TextField()
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    post_category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 
 class Student(models.Model):

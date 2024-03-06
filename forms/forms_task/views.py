@@ -1,6 +1,7 @@
 """
 views.py
 """
+
 from django.views.generic import CreateView, TemplateView
 from . import forms
 from . import models
@@ -14,6 +15,14 @@ class Success(TemplateView):
     """
 
     template_name = "success.html"
+
+
+class Index(TemplateView):
+    """
+    index view
+    """
+
+    template_name = "index.html"
 
 
 class AddBook(CreateView):
@@ -30,6 +39,7 @@ class AddCar(CreateView):
     """
     car view
     """
+
     model = models.Car
     template_name = "add.html"
     form_class = forms.CarForm
@@ -104,3 +114,53 @@ class AddEnrollment(CreateView):
     template_name = "add.html"
     form_class = forms.EnrollmentForm
     success_url = "success"
+
+
+class AddCategory(CreateView):
+    """
+    category view
+    """
+
+    template_name = "add.html"
+    form_class = forms.CategoryForm
+    success_url = "add_product"
+
+
+class AddProject(CreateView):
+    """
+    category view
+    """
+
+    template_name = "add.html"
+    form_class = forms.ProjectForm
+    success_url = "add_task"
+
+
+class AddPostCategory(CreateView):
+    """
+    category view
+    """
+
+    template_name = "add.html"
+    form_class = forms.PostCategoryForm
+    success_url = "add_post"
+
+
+class AddStudent(CreateView):
+    """
+    category view
+    """
+
+    template_name = "add.html"
+    form_class = forms.StudentForm
+    success_url = "add_enrollment"
+
+
+class AddCourse(CreateView):
+    """
+    category view
+    """
+
+    template_name = "add.html"
+    form_class = forms.CourseForm
+    success_url = "add_enrollment"
