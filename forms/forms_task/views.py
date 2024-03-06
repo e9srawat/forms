@@ -3,6 +3,7 @@ views.py
 """
 from django.views.generic import CreateView, TemplateView
 from . import forms
+from . import models
 
 # Create your views here.
 
@@ -29,7 +30,7 @@ class AddCar(CreateView):
     """
     car view
     """
-
+    model = models.Car
     template_name = "add.html"
     form_class = forms.CarForm
     success_url = "success"
