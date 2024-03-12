@@ -1,5 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path("", views.Index.as_view(), name="index"),
@@ -18,4 +19,36 @@ urlpatterns = [
     path("add_course", views.AddCourse.as_view(), name="add_course"),
     path("add_enrollment", views.AddEnrollment.as_view(), name="add_enrollment"),
     path("success", views.Success.as_view(), name="success"),
+    
+    path("book/api", views.BookListView.as_view()),
+    path("book/api/<slug:slug>", views.BookDetailView.as_view()),
+    path("car/api", views.CarList.as_view()),
+    path("car/api/<int:pk>/", views.CarDetail.as_view()),
+    path("song/api", views.SongList.as_view()),
+    path("song/api/<int:pk>/", views.SongDetail.as_view()),
+    path("movie/api", views.MovieList.as_view()),
+    path("movie/api/<int:pk>/", views.MovieDetail.as_view()),
+    path("jobposting/api", views.JobPostingList.as_view()),
+    path("jobposting/api/<int:pk>/", views.JobPostingDetail.as_view()),
+    path("product/api", views.ProductList.as_view()),
+    path("product/api/<int:pk>/", views.ProductDetail.as_view()),
+    path("task/api", views.TaskList.as_view()),
+    path("task/api/<int:pk>/", views.TaskDetail.as_view()),
+    path("post/api", views.PostList.as_view()),
+    path("post/api/<int:pk>/", views.PostDetail.as_view()),
+    path("postcategory/api", views.PostCategoryList.as_view()),
+    path("postcategory/api/<int:pk>/", views.PostCategoryDetail.as_view()),
+    path("category/api", views.CategoryList.as_view()),
+    path("category/api/<int:pk>/", views.CategoryDetail.as_view()),
+    path("project/api", views.ProjectList.as_view()),
+    path("project/api/<int:pk>/", views.ProjectDetail.as_view()),
+    path("student/api", views.StudentList.as_view() ),
+    path("student/api/<int:pk>/", views.StudentDetail.as_view(), name='student'),
+    path("course/api", views.CourseList.as_view()),
+    path("course/api/<int:pk>/", views.CourseDetail.as_view()),
+    path("enrollment/api", views.EnrollmentListView.as_view()),
+    path("enrollment/api/<int:pk>", views.EnrollmentDetailView.as_view()),
+    path("api-auth/", include("rest_framework.urls")),
+    path("gettoken/", obtain_auth_token),
+    
 ]

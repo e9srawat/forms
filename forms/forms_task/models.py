@@ -3,6 +3,8 @@ models.py
 """
 
 from django.db import models
+from django.utils.text import slugify 
+
 
 
 # Create your models here.
@@ -15,6 +17,11 @@ class Book(models.Model):
     author = models.CharField(max_length=50)
     publication_date = models.DateField()
     isbn = models.CharField(max_length=13)
+    slug = models.SlugField(unique=False)
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Book, self).save(*args, **kwargs)
 
 
 class Car(models.Model):
